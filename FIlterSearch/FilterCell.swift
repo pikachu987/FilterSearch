@@ -12,6 +12,9 @@ class FilterCell: UICollectionViewCell {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
     
+    private var image: UIImage? = nil
+    private var filterName = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -22,17 +25,25 @@ class FilterCell: UICollectionViewCell {
     }
     
     func setEntity(_ image: UIImage?, filterName: String){
+        self.image = image
         self.imageView.image = image
-        guard let image = image else {
+        self.filterName = filterName
+        self.makeFilter()
+    }
+    
+    private func makeFilter(){
+        guard let image = self.image else {
             return
         }
-        if filterName != ""{
+        if self.filterName != ""{
             self.indicatorView.isHidden = false
             self.indicatorView.startAnimating()
             DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
+                UIApplication.shared.beginIgnoringInteractionEvents()
+                
                 let context = CIContext(options: nil)
                 let beginImage = CIImage(image: image)
-                guard let filter = CIFilter(name: filterName) else {
+                guard let filter = CIFilter(name: self.filterName) else {
                     return
                 }
                 filter.setValue(beginImage, forKey: kCIInputImageKey)
@@ -47,6 +58,8 @@ class FilterCell: UICollectionViewCell {
                     processedImage = processedImage?.imageRotatedByDegrees(90, flip: false)
                 }
                 DispatchQueue.main.async {
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                    
                     self.imageView.image = processedImage
                     self.indicatorView.isHidden = true
                     self.indicatorView.stopAnimating()
