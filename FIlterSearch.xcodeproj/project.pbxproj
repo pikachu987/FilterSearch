@@ -14,8 +14,8 @@
 		0CFC97471F278FE9000554AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC97451F278FE9000554AE /* LaunchScreen.storyboard */; };
 		0CFC97521F278FE9000554AE /* FilterSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC97511F278FE9000554AE /* FilterSearchTests.swift */; };
 		0CFC975D1F278FE9000554AE /* FilterSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC975C1F278FE9000554AE /* FilterSearchUITests.swift */; };
-		0CFC97751F27906B000554AE /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC97731F27906B000554AE /* image1.jpeg */; };
-		0CFC97761F27906B000554AE /* image3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC97741F27906B000554AE /* image3.jpeg */; };
+		0CFC97751F27906B000554AE /* image2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC97731F27906B000554AE /* image2.jpeg */; };
+		0CFC97761F27906B000554AE /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC97741F27906B000554AE /* image1.jpeg */; };
 		0CFC977B1F2790D1000554AE /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC97771F2790D1000554AE /* CategoryCell.swift */; };
 		0CFC977C1F2790D1000554AE /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC97781F2790D1000554AE /* CategoryCell.xib */; };
 		0CFC977D1F2790D1000554AE /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC97791F2790D1000554AE /* FilterCell.swift */; };
@@ -23,8 +23,8 @@
 		0CFC97811F2790DA000554AE /* UICollectionViewFlowLayout+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC977F1F2790DA000554AE /* UICollectionViewFlowLayout+.swift */; };
 		0CFC97821F2790DA000554AE /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC97801F2790DA000554AE /* UIImage+.swift */; };
 		0CFC97851F2790E8000554AE /* FilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC97831F2790E8000554AE /* FilterHelper.swift */; };
-		0CFC97861F2790E8000554AE /* PhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC97841F2790E8000554AE /* PhotoHelper.swift */; };
 		0CFC97881F2790F0000554AE /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFC97871F2790F0000554AE /* FilterItem.swift */; };
+		0CFC978A1F279403000554AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CFC97891F279403000554AE /* GoogleService-Info.plist */; };
 		27A1909D5B039B2D8BC6CB0C /* Pods_FilterSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6745392E68D280F55390ED /* Pods_FilterSearchTests.framework */; };
 		3FCACAC08A319D0E68B93DF0 /* Pods_FilterSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D181462DCA54CD85C30E0D /* Pods_FilterSearchUITests.framework */; };
 		C44AF5728F7F67F040266CF6 /* Pods_FilterSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC11181BFFC5ABDD901B43E /* Pods_FilterSearch.framework */; };
@@ -62,8 +62,8 @@
 		0CFC97581F278FE9000554AE /* FilterSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilterSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CFC975C1F278FE9000554AE /* FilterSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSearchUITests.swift; sourceTree = "<group>"; };
 		0CFC975E1F278FE9000554AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0CFC97731F27906B000554AE /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpeg; sourceTree = "<group>"; };
-		0CFC97741F27906B000554AE /* image3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpeg; sourceTree = "<group>"; };
+		0CFC97731F27906B000554AE /* image2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpeg; sourceTree = "<group>"; };
+		0CFC97741F27906B000554AE /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpeg; sourceTree = "<group>"; };
 		0CFC97771F2790D1000554AE /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0CFC97781F2790D1000554AE /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		0CFC97791F2790D1000554AE /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
@@ -71,8 +71,8 @@
 		0CFC977F1F2790DA000554AE /* UICollectionViewFlowLayout+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewFlowLayout+.swift"; sourceTree = "<group>"; };
 		0CFC97801F2790DA000554AE /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		0CFC97831F2790E8000554AE /* FilterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterHelper.swift; sourceTree = "<group>"; };
-		0CFC97841F2790E8000554AE /* PhotoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoHelper.swift; sourceTree = "<group>"; };
 		0CFC97871F2790F0000554AE /* FilterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterItem.swift; sourceTree = "<group>"; };
+		0CFC97891F279403000554AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14C77BF6E6C699CCD7F38215 /* Pods-FilterSearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterSearchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilterSearchUITests/Pods-FilterSearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1B6745392E68D280F55390ED /* Pods_FilterSearchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilterSearchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31877133C2A3E11EEF9BD3DE /* Pods-FilterSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterSearchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilterSearchUITests/Pods-FilterSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,8 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				0CFC97431F278FE9000554AE /* Assets.xcassets */,
-				0CFC97731F27906B000554AE /* image1.jpeg */,
-				0CFC97741F27906B000554AE /* image3.jpeg */,
+				0CFC97731F27906B000554AE /* image2.jpeg */,
+				0CFC97741F27906B000554AE /* image1.jpeg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -178,6 +178,7 @@
 		0CFC976B1F279013000554AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0CFC97891F279403000554AE /* GoogleService-Info.plist */,
 				0CFC97481F278FE9000554AE /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -234,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				0CFC97831F2790E8000554AE /* FilterHelper.swift */,
-				0CFC97841F2790E8000554AE /* PhotoHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -390,11 +390,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CFC97471F278FE9000554AE /* LaunchScreen.storyboard in Resources */,
+				0CFC978A1F279403000554AE /* GoogleService-Info.plist in Resources */,
 				0CFC977C1F2790D1000554AE /* CategoryCell.xib in Resources */,
 				0CFC97441F278FE9000554AE /* Assets.xcassets in Resources */,
 				0CFC97421F278FE9000554AE /* Main.storyboard in Resources */,
-				0CFC97751F27906B000554AE /* image1.jpeg in Resources */,
-				0CFC97761F27906B000554AE /* image3.jpeg in Resources */,
+				0CFC97751F27906B000554AE /* image2.jpeg in Resources */,
+				0CFC97761F27906B000554AE /* image1.jpeg in Resources */,
 				0CFC977E1F2790D1000554AE /* FilterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,7 +566,6 @@
 				0CFC973D1F278FE9000554AE /* AppDelegate.swift in Sources */,
 				0CFC97851F2790E8000554AE /* FilterHelper.swift in Sources */,
 				0CFC97881F2790F0000554AE /* FilterItem.swift in Sources */,
-				0CFC97861F2790E8000554AE /* PhotoHelper.swift in Sources */,
 				0CFC977B1F2790D1000554AE /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,7 +725,7 @@
 				INFOPLIST_FILE = FilterSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pikachu987.FilterSearch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pikachu987.FIlterSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -740,7 +740,7 @@
 				INFOPLIST_FILE = FilterSearch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pikachu987.FilterSearch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pikachu987.FIlterSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -827,6 +827,7 @@
 				0CFC97631F278FE9000554AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CFC97641F278FE9000554AE /* Build configuration list for PBXNativeTarget "FilterSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -835,6 +836,7 @@
 				0CFC97661F278FE9000554AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CFC97671F278FE9000554AE /* Build configuration list for PBXNativeTarget "FilterSearchUITests" */ = {
 			isa = XCConfigurationList;
@@ -843,6 +845,7 @@
 				0CFC97691F278FE9000554AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

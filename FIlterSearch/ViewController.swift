@@ -23,7 +23,6 @@ class ViewController: UIViewController {
         
         self.title = "Filter"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(self.imageSelectAction(_:)))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.saveSelectAction(_:)))
         
         self.imageView.contentMode = .scaleAspectFill
         self.imageView.clipsToBounds = true
@@ -33,6 +32,7 @@ class ViewController: UIViewController {
         
         self.filterCollectionView.delegate = self
         self.filterCollectionView.dataSource = self
+        self.filterCollectionView.indicatorStyle = .white
         self.filterCollectionView.register(UINib(nibName: "FilterCell", bundle: Bundle.main), forCellWithReuseIdentifier: "FilterCell")
         self.filterCollectionView.collectionViewLayout = .detailLayout()
         self.filterCollectionView.reloadData()
@@ -61,10 +61,6 @@ class ViewController: UIViewController {
             self.imageView.image = UIImage(named: "image2.jpeg")
             self.filterCollectionView.reloadData()
         }))
-        alertController.addAction(UIAlertAction(title: "image 3", style: .default, handler: { (_) in
-            self.imageView.image = UIImage(named: "image3.jpeg")
-            self.filterCollectionView.reloadData()
-        }))
         alertController.addAction(UIAlertAction(title: "Open Photo Library", style: .default, handler: { (_) in
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
@@ -80,10 +76,6 @@ class ViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
-    }
-    
-    @objc private func saveSelectAction(_ sender: UIBarButtonItem){
-        
     }
     
     
