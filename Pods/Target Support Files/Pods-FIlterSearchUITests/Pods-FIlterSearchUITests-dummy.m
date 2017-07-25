@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_FIlterSearchUITests : NSObject
+@interface PodsDummy_Pods_FilterSearchUITests : NSObject
 @end
-@implementation PodsDummy_Pods_FIlterSearchUITests
+@implementation PodsDummy_Pods_FilterSearchUITests
 @end

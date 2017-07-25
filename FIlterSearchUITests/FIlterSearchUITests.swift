@@ -1,14 +1,14 @@
 //
-//  FIlterSearchUITests.swift
-//  FIlterSearchUITests
+//  FilterSearchUITests.swift
+//  FilterSearchUITests
 //
-//  Created by Kim Guanho on 2017. 7. 24..
+//  Created by Kim Guanho on 2017. 7. 25..
 //  Copyright © 2017년 pikachu987. All rights reserved.
 //
 
 import XCTest
 
-class FIlterSearchUITests: XCTestCase {
+class FilterSearchUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

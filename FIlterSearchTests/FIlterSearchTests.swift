@@ -1,15 +1,15 @@
 //
-//  FIlterSearchTests.swift
-//  FIlterSearchTests
+//  FilterSearchTests.swift
+//  FilterSearchTests
 //
-//  Created by Kim Guanho on 2017. 7. 24..
+//  Created by Kim Guanho on 2017. 7. 25..
 //  Copyright © 2017년 pikachu987. All rights reserved.
 //
 
 import XCTest
-@testable import FIlterSearch
+@testable import FilterSearch
 
-class FIlterSearchTests: XCTestCase {
+class FilterSearchTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

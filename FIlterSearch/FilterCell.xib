@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,22 +24,35 @@
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VNn-6m-vLT">
                         <rect key="frame" x="172.5" y="278" width="20" height="20"/>
                     </activityIndicatorView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check" translatesAutoresizingMaskIntoConstraints="NO" id="w9h-3V-2CG">
+                        <rect key="frame" x="317" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="PAx-SA-IxL"/>
+                            <constraint firstAttribute="width" constant="40" id="ZDh-Ej-cOT"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="a7K-qu-T2l" firstAttribute="leading" secondItem="BnJ-Af-xg5" secondAttribute="leading" id="6Nt-sn-qza"/>
                 <constraint firstAttribute="trailing" secondItem="a7K-qu-T2l" secondAttribute="trailing" id="I9N-bd-1Us"/>
                 <constraint firstAttribute="bottom" secondItem="a7K-qu-T2l" secondAttribute="bottom" id="JLg-7M-g7C"/>
+                <constraint firstItem="w9h-3V-2CG" firstAttribute="top" secondItem="BnJ-Af-xg5" secondAttribute="top" constant="8" id="OmO-o3-bYT"/>
                 <constraint firstItem="a7K-qu-T2l" firstAttribute="top" secondItem="BnJ-Af-xg5" secondAttribute="top" id="ThI-Ul-Pn2"/>
                 <constraint firstItem="VNn-6m-vLT" firstAttribute="centerX" secondItem="a7K-qu-T2l" secondAttribute="centerX" id="dqI-ac-e1F"/>
                 <constraint firstItem="VNn-6m-vLT" firstAttribute="centerY" secondItem="a7K-qu-T2l" secondAttribute="centerY" id="ij2-tV-clD"/>
+                <constraint firstAttribute="trailing" secondItem="w9h-3V-2CG" secondAttribute="trailing" constant="8" id="uMb-jB-nFZ"/>
             </constraints>
             <size key="customSize" width="365" height="576"/>
             <connections>
+                <outlet property="checkImageView" destination="w9h-3V-2CG" id="J3Q-H1-4kC"/>
                 <outlet property="imageView" destination="a7K-qu-T2l" id="dWP-qw-BWh"/>
                 <outlet property="indicatorView" destination="VNn-6m-vLT" id="U2A-F5-cIN"/>
             </connections>
             <point key="canvasLocation" x="321.5" y="316"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="ic_check" width="120" height="120"/>
+    </resources>
 </document>

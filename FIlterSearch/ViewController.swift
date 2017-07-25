@@ -1,25 +1,26 @@
 //
 //  ViewController.swift
-//  FIlterSearch
+//  FilterSearch
 //
-//  Created by Kim Guanho on 2017. 7. 24..
+//  Created by Kim Guanho on 2017. 7. 25..
 //  Copyright © 2017년 pikachu987. All rights reserved.
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet fileprivate weak var categoryCollectionView: UICollectionView!
     @IBOutlet fileprivate weak var filterCollectionView: UICollectionView!
     @IBOutlet fileprivate weak var imageView: UIImageView!
-
+    
     fileprivate var section = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        
         self.title = "Filter"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(self.imageSelectAction(_:)))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.saveSelectAction(_:)))
@@ -27,15 +28,15 @@ class ViewController: UIViewController {
         self.imageView.contentMode = .scaleAspectFill
         self.imageView.clipsToBounds = true
         self.imageView.image = UIImage(named: "image1.jpeg")
-
+        
         self.section = UserDefaults.standard.integer(forKey: "category_index")
-
+        
         self.filterCollectionView.delegate = self
         self.filterCollectionView.dataSource = self
         self.filterCollectionView.register(UINib(nibName: "FilterCell", bundle: Bundle.main), forCellWithReuseIdentifier: "FilterCell")
         self.filterCollectionView.collectionViewLayout = .detailLayout()
         self.filterCollectionView.reloadData()
-
+        
         self.categoryCollectionView.delegate = self
         self.categoryCollectionView.dataSource = self
         self.categoryCollectionView.showsVerticalScrollIndicator = false
@@ -43,12 +44,13 @@ class ViewController: UIViewController {
         self.categoryCollectionView.register(UINib(nibName: "CategoryCell", bundle: Bundle.main), forCellWithReuseIdentifier: "CategoryCell")
         self.categoryCollectionView.collectionViewLayout = .categoryLayout()
         self.categoryCollectionView.reloadData()
-
+        
         DispatchQueue.main.async {
             self.categoryCollectionView.setContentOffset(CGPoint(x: CGFloat(UserDefaults.standard.float(forKey: "category_x")), y: 0.0), animated: false)
+            self.filterCollectionView.setContentOffset(CGPoint(x: CGFloat(UserDefaults.standard.float(forKey: "filter_x")), y: 0.0), animated: false)
         }
     }
-
+    
     @objc private func imageSelectAction(_ sender: UIBarButtonItem){
         let alertController = UIAlertController(title: "", message: "Choice Image", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "image 1", style: .default, handler: { (_) in
@@ -83,8 +85,8 @@ class ViewController: UIViewController {
     @objc private func saveSelectAction(_ sender: UIBarButtonItem){
         
     }
-
-
+    
+    
 }
 
 extension ViewController: UICollectionViewDelegate{
@@ -97,13 +99,28 @@ extension ViewController: UICollectionViewDelegate{
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.filterCollectionView{
-
+            let checkCnt = UserDefaults.standard.integer(forKey: FilterHelper.shared.filterArray[self.section][indexPath.row].value)
+            if checkCnt > 4{
+                let alertController = UIAlertController(title: "", message: "5번 이상은 체크가 불가능합니다.", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }else{
+                let alertController = UIAlertController(title: "", message: "해당 이미지가 필터로 적합하나요?\(checkCnt != 0 ? "\n(현재 \(checkCnt)번 체크했습니다.)" : "")", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "아뇨", style: .cancel, handler: nil))
+                alertController.addAction(UIAlertAction(title: "네", style: .default, handler: { (_) in
+                    UserDefaults.standard.set(checkCnt+1, forKey: FilterHelper.shared.filterArray[self.section][indexPath.row].value)
+                    UserDefaults.standard.synchronize()
+                    Analytics.logEvent("filter", parameters: ["test": FilterHelper.shared.filterArray[self.section][indexPath.row].value])
+                    self.filterCollectionView.reloadData()
+                }))
+                self.present(alertController, animated: true, completion: nil)
+            }
         }else{
             if self.section != indexPath.row{
                 self.section = indexPath.row
                 self.categoryCollectionView.reloadData()
                 self.filterCollectionView.reloadData()
-
+                
                 UserDefaults.standard.set(indexPath.row, forKey: "category_index")
                 DispatchQueue.main.async {
                     self.filterCollectionView.setContentOffset(.zero, animated: false)
@@ -142,7 +159,7 @@ extension ViewController: UICollectionViewDataSource{
 
 extension ViewController: UIImagePickerControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        picker.dismiss(animated: true) { 
+        picker.dismiss(animated: true) {
             if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
                 self.imageView.image = image
                 self.filterCollectionView.reloadData()

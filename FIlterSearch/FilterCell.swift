@@ -13,6 +13,13 @@ class FilterCell: UICollectionViewCell {
 
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet private weak var checkImageView: UIImageView!
+    
+    var isCheck = false{
+        willSet{
+            self.checkImageView.isHidden = !newValue
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +34,10 @@ class FilterCell: UICollectionViewCell {
         self.imageView.image = nil
         self.indicatorView.isHidden = false
         self.indicatorView.startAnimating()
+        self.isCheck = false
+        if UserDefaults.standard.integer(forKey: item.value) > 0{
+            self.isCheck = true
+        }
         DispatchQueue.global().async {
             let filter = item.filter
             let stillImageSource = GPUImagePicture(image: image)

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_FIlterSearchTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_FIlterSearchTestsVersionString[];
+FOUNDATION_EXPORT double Pods_FilterSearchTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_FilterSearchTestsVersionString[];
 
