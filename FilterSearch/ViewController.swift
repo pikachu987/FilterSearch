@@ -71,18 +71,18 @@ class ViewController: UIViewController {
             self.imageView.image = UIImage(named: "image3.jpeg")
             self.filterCollectionView.reloadData()
         }))
-        alertController.addAction(UIAlertAction(title: "Open Photo Library", style: .default, handler: { (_) in
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = .photoLibrary
-            self.present(imagePickerController, animated: true)
-        }))
-        alertController.addAction(UIAlertAction(title: "Open Camera", style: .default, handler: { (_) in
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = .camera
-            self.present(imagePickerController, animated: true)
-        }))
+//        alertController.addAction(UIAlertAction(title: "Open Photo Library", style: .default, handler: { (_) in
+//            let imagePickerController = UIImagePickerController()
+//            imagePickerController.delegate = self
+//            imagePickerController.sourceType = .photoLibrary
+//            self.present(imagePickerController, animated: true)
+//        }))
+//        alertController.addAction(UIAlertAction(title: "Open Camera", style: .default, handler: { (_) in
+//            let imagePickerController = UIImagePickerController()
+//            imagePickerController.delegate = self
+//            imagePickerController.sourceType = .camera
+//            self.present(imagePickerController, animated: true)
+//        }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         self.present(alertController, animated: true, completion: nil)
