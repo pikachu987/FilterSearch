@@ -15,9 +15,8 @@
 		636CE58D1F28305400688DD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 636CE58B1F28305400688DD1 /* LaunchScreen.storyboard */; };
 		636CE5981F28305500688DD1 /* FilterSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5971F28305500688DD1 /* FilterSearchTests.swift */; };
 		636CE5A31F28305500688DD1 /* FilterSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5A21F28305500688DD1 /* FilterSearchUITests.swift */; };
-		636CE5B31F2830C700688DD1 /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 636CE5B11F2830C700688DD1 /* image1.jpeg */; };
-		636CE5B41F2830C700688DD1 /* image2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 636CE5B21F2830C700688DD1 /* image2.jpeg */; };
-		636CE5B71F2830E700688DD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 636CE5B61F2830E700688DD1 /* GoogleService-Info.plist */; };
+		636CE5B31F2830C700688DD1 /* image2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 636CE5B11F2830C700688DD1 /* image2.jpeg */; };
+		636CE5B41F2830C700688DD1 /* image3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 636CE5B21F2830C700688DD1 /* image3.jpeg */; };
 		636CE5C21F28316D00688DD1 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5BE1F28316D00688DD1 /* CategoryCell.swift */; };
 		636CE5C31F28316D00688DD1 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 636CE5BF1F28316D00688DD1 /* CategoryCell.xib */; };
 		636CE5C41F28316D00688DD1 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5C01F28316D00688DD1 /* FilterCell.swift */; };
@@ -26,6 +25,10 @@
 		636CE5C91F28317800688DD1 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5C71F28317800688DD1 /* UIImage+.swift */; };
 		636CE5CB1F28317F00688DD1 /* FilterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5CA1F28317F00688DD1 /* FilterHelper.swift */; };
 		636CE5CE1F2831A100688DD1 /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5CD1F2831A100688DD1 /* FilterItem.swift */; };
+		636CE5D11F28607B00688DD1 /* FilterSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5CF1F28607B00688DD1 /* FilterSearch.xcdatamodeld */; };
+		636CE5D31F2860B900688DD1 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5D21F2860B900688DD1 /* CoreDataHelper.swift */; };
+		636CE5D51F2860D200688DD1 /* FilterDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CE5D41F2860D200688DD1 /* FilterDataHelper.swift */; };
+		636CE5D71F2866EA00688DD1 /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 636CE5D61F2866EA00688DD1 /* image1.jpeg */; };
 		E041EA5B5C1D0056E1706B03 /* Pods_FilterSearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8893F305CD108140F961833 /* Pods_FilterSearchTests.framework */; };
 		F18A75728DB6F9ACFEF17012 /* Pods_FilterSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F378D4CB2D977F3B370C91F /* Pods_FilterSearch.framework */; };
 /* End PBXBuildFile section */
@@ -66,9 +69,8 @@
 		636CE59E1F28305500688DD1 /* FilterSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilterSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		636CE5A21F28305500688DD1 /* FilterSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSearchUITests.swift; sourceTree = "<group>"; };
 		636CE5A41F28305500688DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		636CE5B11F2830C700688DD1 /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpeg; sourceTree = "<group>"; };
-		636CE5B21F2830C700688DD1 /* image2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpeg; sourceTree = "<group>"; };
-		636CE5B61F2830E700688DD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		636CE5B11F2830C700688DD1 /* image2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpeg; sourceTree = "<group>"; };
+		636CE5B21F2830C700688DD1 /* image3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpeg; sourceTree = "<group>"; };
 		636CE5BE1F28316D00688DD1 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		636CE5BF1F28316D00688DD1 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		636CE5C01F28316D00688DD1 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
@@ -77,6 +79,10 @@
 		636CE5C71F28317800688DD1 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		636CE5CA1F28317F00688DD1 /* FilterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterHelper.swift; sourceTree = "<group>"; };
 		636CE5CD1F2831A100688DD1 /* FilterItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterItem.swift; sourceTree = "<group>"; };
+		636CE5D01F28607B00688DD1 /* FilterSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FilterSearch.xcdatamodel; sourceTree = "<group>"; };
+		636CE5D21F2860B900688DD1 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		636CE5D41F2860D200688DD1 /* FilterDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDataHelper.swift; sourceTree = "<group>"; };
+		636CE5D61F2866EA00688DD1 /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpeg; sourceTree = "<group>"; };
 		64F45FF56DE9555AD83C2006 /* Pods-FilterSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilterSearch/Pods-FilterSearch.release.xcconfig"; sourceTree = "<group>"; };
 		8BDD26BEA5E55FB9A5F3C922 /* Pods-FilterSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterSearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilterSearchTests/Pods-FilterSearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		B415712A47FCE215C6CC28FE /* Pods-FilterSearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterSearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FilterSearchTests/Pods-FilterSearchTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,8 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				636CE5891F28305400688DD1 /* Assets.xcassets */,
-				636CE5B11F2830C700688DD1 /* image1.jpeg */,
-				636CE5B21F2830C700688DD1 /* image2.jpeg */,
+				636CE5D61F2866EA00688DD1 /* image1.jpeg */,
+				636CE5B11F2830C700688DD1 /* image2.jpeg */,
+				636CE5B21F2830C700688DD1 /* image3.jpeg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -202,7 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				636CE58E1F28305400688DD1 /* Info.plist */,
-				636CE5B61F2830E700688DD1 /* GoogleService-Info.plist */,
+				636CE5CF1F28607B00688DD1 /* FilterSearch.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -258,6 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				636CE5CA1F28317F00688DD1 /* FilterHelper.swift */,
+				636CE5D21F2860B900688DD1 /* CoreDataHelper.swift */,
+				636CE5D41F2860D200688DD1 /* FilterDataHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -391,12 +400,12 @@
 			files = (
 				636CE58D1F28305400688DD1 /* LaunchScreen.storyboard in Resources */,
 				636CE5C31F28316D00688DD1 /* CategoryCell.xib in Resources */,
-				636CE5B41F2830C700688DD1 /* image2.jpeg in Resources */,
+				636CE5B41F2830C700688DD1 /* image3.jpeg in Resources */,
+				636CE5D71F2866EA00688DD1 /* image1.jpeg in Resources */,
 				636CE58A1F28305400688DD1 /* Assets.xcassets in Resources */,
 				636CE5881F28305400688DD1 /* Main.storyboard in Resources */,
 				636CE5C51F28316D00688DD1 /* FilterCell.xib in Resources */,
-				636CE5B31F2830C700688DD1 /* image1.jpeg in Resources */,
-				636CE5B71F2830E700688DD1 /* GoogleService-Info.plist in Resources */,
+				636CE5B31F2830C700688DD1 /* image2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,11 +568,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				636CE5D31F2860B900688DD1 /* CoreDataHelper.swift in Sources */,
 				636CE5CE1F2831A100688DD1 /* FilterItem.swift in Sources */,
 				636CE5C81F28317800688DD1 /* UICollectionViewFlowLayout+.swift in Sources */,
+				636CE5D51F2860D200688DD1 /* FilterDataHelper.swift in Sources */,
 				636CE5851F28305400688DD1 /* ViewController.swift in Sources */,
 				636CE5C41F28316D00688DD1 /* FilterCell.swift in Sources */,
 				636CE5C91F28317800688DD1 /* UIImage+.swift in Sources */,
+				636CE5D11F28607B00688DD1 /* FilterSearch.xcdatamodeld in Sources */,
 				636CE5831F28305400688DD1 /* AppDelegate.swift in Sources */,
 				636CE5CB1F28317F00688DD1 /* FilterHelper.swift in Sources */,
 				636CE5C21F28316D00688DD1 /* CategoryCell.swift in Sources */,
@@ -827,6 +839,7 @@
 				636CE5A91F28305500688DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		636CE5AA1F28305500688DD1 /* Build configuration list for PBXNativeTarget "FilterSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -835,6 +848,7 @@
 				636CE5AC1F28305500688DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		636CE5AD1F28305500688DD1 /* Build configuration list for PBXNativeTarget "FilterSearchUITests" */ = {
 			isa = XCConfigurationList;
@@ -843,8 +857,22 @@
 				636CE5AF1F28305500688DD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		636CE5CF1F28607B00688DD1 /* FilterSearch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				636CE5D01F28607B00688DD1 /* FilterSearch.xcdatamodel */,
+			);
+			currentVersion = 636CE5D01F28607B00688DD1 /* FilterSearch.xcdatamodel */;
+			path = FilterSearch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 636CE5771F28305400688DD1 /* Project object */;
 }

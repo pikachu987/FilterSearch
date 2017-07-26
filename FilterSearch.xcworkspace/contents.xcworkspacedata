@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Filter+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Filter+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:FilterSearch.xcodeproj">
    </FileRef>
    <FileRef

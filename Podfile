@@ -6,7 +6,6 @@ target 'FilterSearch' do
   use_frameworks!
 
   pod 'GPUImage'
-  pod 'Firebase/Core'
 
   # Pods for FilterSearch
 

@@ -7,7 +7,11 @@
 //
 
 import UIKit
-import FirebaseAnalytics
+import Messages
+import MessageUI
+
+let kSTRING_EMAIL = "pikachu77769@gmail.com"
+
 
 class ViewController: UIViewController {
 
@@ -23,6 +27,8 @@ class ViewController: UIViewController {
 
         self.title = "Filter"
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(self.imageSelectAction(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addAction(_:)))
+        self.navigationItem.rightBarButtonItems?.append(UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(self.refreshAction(_:))))
 
         self.imageView.contentMode = .scaleAspectFill
         self.imageView.clipsToBounds = true
@@ -61,6 +67,10 @@ class ViewController: UIViewController {
             self.imageView.image = UIImage(named: "image2.jpeg")
             self.filterCollectionView.reloadData()
         }))
+        alertController.addAction(UIAlertAction(title: "image 3", style: .default, handler: { (_) in
+            self.imageView.image = UIImage(named: "image3.jpeg")
+            self.filterCollectionView.reloadData()
+        }))
         alertController.addAction(UIAlertAction(title: "Open Photo Library", style: .default, handler: { (_) in
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
@@ -79,6 +89,50 @@ class ViewController: UIViewController {
     }
 
 
+    @objc private func addAction(_ sender: UIBarButtonItem){
+        let filters = FilterDataHelper.shared.getFiltersString()
+
+        if MFMailComposeViewController.canSendMail() && filters != ""{
+            let mailVC = MFMailComposeViewController()
+            mailVC.mailComposeDelegate = self
+            mailVC.setToRecipients([kSTRING_EMAIL])
+            let bodyText = "\n\nFilters:\n\n\(filters)"
+            mailVC.setMessageBody(bodyText, isHTML: false)
+            mailVC.setSubject("Add Filter")
+            self.present(mailVC, animated: true, completion: {
+
+            })
+        }else if filters == ""{
+            let alertController = UIAlertController(title: "", message: "보낼 메시지가 존재하지 않습니다.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }else{
+            let alertController = UIAlertController(title: "", message: "메일 설정이 되어있지 않습니다.", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+
+    @objc private func refreshAction(_ sender: UIBarButtonItem){
+        let alertController = UIAlertController(title: "", message: "모든 데이터를 초기화 하시겠습니까?", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "NO", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "YES", style: .default, handler: { (_) in
+            self.imageView.image = UIImage(named: "image1.jpeg")
+            self.section = 0
+            UserDefaults.standard.removeObject(forKey: "category_x")
+            UserDefaults.standard.removeObject(forKey: "filter_x")
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+            UserDefaults.standard.synchronize()
+            FilterDataHelper.shared.removeFilters()
+            self.categoryCollectionView.setContentOffset(.zero, animated: false)
+            self.filterCollectionView.setContentOffset(.zero, animated: false)
+            self.categoryCollectionView.reloadData()
+            self.filterCollectionView.reloadData()
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
+
 }
 
 extension ViewController: UICollectionViewDelegate{
@@ -94,15 +148,16 @@ extension ViewController: UICollectionViewDelegate{
             let checkCnt = UserDefaults.standard.integer(forKey: FilterHelper.shared.filterArray[self.section][indexPath.row].value)
             if checkCnt > 4{
                 let alertController = UIAlertController(title: "", message: "5번 이상은 체크가 불가능합니다.", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+                alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
             }else{
                 let alertController = UIAlertController(title: "", message: "해당 이미지가 필터로 적합하나요?\(checkCnt != 0 ? "\n(현재 \(checkCnt)번 체크했습니다.)" : "")", preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: "아뇨", style: .cancel, handler: nil))
-                alertController.addAction(UIAlertAction(title: "네", style: .default, handler: { (_) in
+                alertController.addAction(UIAlertAction(title: "NO", style: .cancel, handler: nil))
+                alertController.addAction(UIAlertAction(title: "YES", style: .default, handler: { (_) in
                     UserDefaults.standard.set(checkCnt+1, forKey: FilterHelper.shared.filterArray[self.section][indexPath.row].value)
                     UserDefaults.standard.synchronize()
-                    Analytics.logEvent("filter", parameters: ["test": FilterHelper.shared.filterArray[self.section][indexPath.row].value])
+
+                    FilterDataHelper.shared.addFilter(FilterHelper.shared.filterArray[self.section][indexPath.row].value)
                     self.filterCollectionView.reloadData()
                 }))
                 self.present(alertController, animated: true, completion: nil)
@@ -165,4 +220,21 @@ extension ViewController: UIImagePickerControllerDelegate{
 
 extension ViewController: UINavigationControllerDelegate{
 
+}
+
+
+
+extension ViewController: MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true) {
+            if result == .sent{
+                FilterDataHelper.shared.removeFilters()
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "", message: "성공적으로 메시지를 보냈습니다.", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+    }
 }

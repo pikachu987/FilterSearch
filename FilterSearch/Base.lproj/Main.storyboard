@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FIlterSearch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FilterSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,19 +25,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nG-fb-Dha">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="586"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KIn-oX-x8E">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="350" id="Fko-eW-i4b"/>
+                                                    <constraint firstAttribute="height" constant="280" id="Fko-eW-i4b"/>
                                                 </constraints>
                                             </imageView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-2K-TZJ">
-                                                <rect key="frame" x="0.0" y="350" width="375" height="30"/>
+                                                <rect key="frame" x="0.0" y="280" width="375" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="sMK-6V-9AL"/>
+                                                    <constraint firstAttribute="height" constant="40" id="sMK-6V-9AL"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Egp-sg-MRW">
                                                     <size key="itemSize" width="50" height="50"/>
@@ -48,7 +48,7 @@
                                                 <cells/>
                                             </collectionView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d7H-3A-Olo">
-                                                <rect key="frame" x="0.0" y="386" width="375" height="200"/>
+                                                <rect key="frame" x="0.0" y="326" width="375" height="200"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="aRg-zc-Vs8"/>

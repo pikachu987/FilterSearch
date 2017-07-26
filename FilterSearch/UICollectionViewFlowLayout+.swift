@@ -22,7 +22,7 @@ extension UICollectionViewLayout{
     static func categoryLayout() -> UICollectionViewLayout{
         let flow = UICollectionViewFlowLayout()
         flow.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        flow.itemSize = CGSize(width: 140, height: 30)
+        flow.itemSize = CGSize(width: 140, height: 40)
         flow.minimumInteritemSpacing = 0
         flow.minimumLineSpacing = 0
         flow.scrollDirection = .horizontal
